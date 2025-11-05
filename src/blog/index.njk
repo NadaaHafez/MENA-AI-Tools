@@ -1,0 +1,49 @@
+---
+layout: layouts/base.njk
+title: المدونة
+---
+
+        <section class="blog-section">
+            <div class="container">
+              <div class="blog-header">
+              <h2 class="section-title">مدونة مركز أدوات الذكي</h2>
+              <p class="section-subtitle">اكتشف أحدث الاتجاهات والتطورات في عالم الذكاء الاصطناعي والتكنولوجيا</p>
+            </div>            
+            <div class="blog-grid">
+                <!-- Blog Card -->
+                {% for post in posts %}
+
+              <article class="blog-card">
+                <div class="blog-icon">{{ post.icon }}</div>
+                <div class="blog-card-content">
+                <span class="blog-category">
+                {{ post.category.name  }}
+                </span>
+
+                <h3 class="blog-title">{{ post.title }}</h3>
+                <p class="blog-excerpt">{{ post.excerpt }}</p>
+
+                <div class="blog-meta">
+                  <span class="blog-author">{{ post.author }}</span>
+                  <span class="blog-date">{{ post.date | simpleDate }}</span>
+                </div>
+
+              <a href="/blog/{{ post.slug.current }}/" class="blog-link"
+                >قراءة المزيد
+                <svg viewBox="0 0 16 16" fill="none" class="left-icon blog-left-icon">
+                  <path
+                    d="M10 12L6 8l4-4"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+            </a>
+        </article>
+
+            {% endfor %}
+      </div>
+
+    </div>
+  </section>

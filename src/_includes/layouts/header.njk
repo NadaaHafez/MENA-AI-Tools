@@ -1,0 +1,47 @@
+<header class="header">
+      <nav class="nav container">
+        <a href="/" class="logo">
+          <div class="logo-icon">✨</div>
+          <div class="logo-text">AI بالعربي</div>
+        </a>
+
+        <!-- Navigation -->
+
+        <!-- Desktop Navigation -->
+
+        <ul class="nav-links">
+          <li><a href="/" class="nav-link {% if page.url == "/" %} active {% endif %}">الرئيسية</a></li>
+          <li><a href="/tools/" class="nav-link {% if "/tools/" in page.url %} active {% endif %}">الأدوات</a></li>
+          <li><a href="/blog/" class="nav-link {% if "/blog/" in page.url %} active {% endif %}">المدونة</a></li>
+          <li><a href="/about/" class="nav-link">من نحن</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="#newsletter" class="btn btn-primary" aria-label="النشرة البريدية">النشرة البريدية</a>
+          {# <a href="../en/" class="btn btn-outline">English</a> #}
+        </div>
+
+   <!-- Mobile Menu Button -->
+       <button class="mobile-menu-btn" aria-label="القائمة">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+      </nav>
+    </header>
+
+   <!-- Mobile Menu Overlay -->
+      <div class='mobile-menu-overlay'>
+        <div class='mobile-menu'>
+          <ul class="nav-links">
+            <li><a href="/" class="nav-link {% if page.url == "/" %} active {% endif %}">الرئيسية</a></li>
+            <li><a href="/tools/" class="nav-link {% if "/tools/" in page.url %} active {% endif %}">الأدوات</a></li>
+            <li><a href="/blog/" class="nav-link {% if "/blog/" in page.url %} active {% endif %}">المدونة</a></li>
+            <li><a href="/about/" class="nav-link">من نحن</a></li>
+          </ul>
+          <button class="mobile-menu-close">X</button>
+
+        </div>
+      </div>
+

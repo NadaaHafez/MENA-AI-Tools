@@ -1,0 +1,45 @@
+---
+layout: layouts/base.njk
+title: الأدوات
+---
+
+<section class="tools-section">
+       <div class="container">
+          <h2 class="section-title">فئات الأدوات</h2>
+
+          <div class="tools-grid">
+            {% for category in categories %}
+            <a href="/tools/{{ category.slug.current }}/" class="tool-card">
+              <div class="tool-icon"> {{ category.icon }}</div>
+              <h3 class="tool-title">{{ category.name }}</h3>
+              <p class="tool-description">{{ category.description }}</p>
+              
+              <div class="tool-tags">
+                <span class="tag"> 
+                  {% set count = 0 %}
+              {% for tool in tools %}
+                {% if tool.category._id == category._id %}
+                  {% set count = count + 1 %}
+                {% endif %}
+              {% endfor %}
+              {{ count }} أداة
+                </span>
+              </div>
+
+               <div class="tool-link">
+                استكشاف الأدوات
+                <svg viewBox="0 0 16 16" fill="none" class="left-icon">
+                  <path
+                    d="M10 12L6 8l4-4"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+            </a>
+            {% endfor %}
+          </div>
+  </div>
+</section>

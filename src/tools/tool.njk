@@ -1,0 +1,53 @@
+---
+pagination:
+  data: tools
+  size: 1
+  alias: tool
+permalink: "/tools/{{ tool.slug.current }}/"
+layout: layouts/base.njk
+---
+
+<article class="tool-page">
+    <div class="container">
+      <!-- Tool Header -->
+      <header class="tool-page-header">
+        <div class="tool-icon-large">{{ tool.icon }}</div>
+         <h1 class="tool-page-title">{{ tool.name }}</h1>
+
+         <div class="tool-page-meta">
+        <span class="tool-category-badge">{{ tool.category.name }}</span>
+        <span class="tool-pricing-badge">{{ tool.pricing }}</span>
+      </div>
+
+      <p class="tool-page-description">{{ tool.description }}</p>
+
+      <div class="tool-page-actions">
+        <a href="{{ tool.website }}" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+          زيارة الموقع الرسمي →
+        </a>
+      </div>
+      </header>
+
+      <!-- Tool Features -->
+      <section class="tool-feature">
+      <h2 class="feature-title">المميزات الرئيسية</h2>
+        <ul class="feature-list">
+          {% for feature in tool.features %}
+          <li class="feature-item">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <circle cx="10" cy="10" r="10" fill="#ff5722" opacity="0.1"/>
+              <path d="M6 10l3 3 5-6" stroke="#ff5722" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            {{ feature }}
+          </li>
+          {% endfor %}
+        </ul>
+      </section>
+
+       <!-- Back Navigation -->
+       <footer class="tool-page-footer">
+      <a href="/tools/{{ tool.category.slug.current }}/" class="btn btn-outline"> ← العودة إلى {{ tool.category.name }}</a>
+       </footer>
+
+    </div>
+</article>

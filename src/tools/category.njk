@@ -1,0 +1,50 @@
+---
+pagination: 
+  data: categories
+  size: 1
+  alias: category
+permalink: "/tools/{{ category.slug.current }}/"
+layout: layouts/base.njk
+---
+
+<section class="tools-section">
+  <div class="container">
+    <!-- Category Header -->
+      <div class="category-header">
+        <div class="category-icon-large">{{ category.icon }}</div>
+          <h1 class="section-title">{{ category.name }}</h1>
+          <p class="category-description">{{ category.description }}</p>
+      </div>
+
+
+      <!-- Tools in this category -->
+    <div class="tools-grid">
+      {% for tool in tools %}
+        {% if tool.category._id == category._id %}
+          <a href="/tools/{{ tool.slug.current }}/" class="tool-card">
+            <div class="tool-icon">{{ tool.icon }}</div>
+            <h3 class="tool-title">{{ tool.name }}</h3>
+            <p class="tool-description">{{ tool.description }}</p>
+            
+            <div class="tool-tags">
+              <span class="tag tag-outline">{{ tool.pricing }}</span>
+            </div>
+
+            <div class="tool-link">
+              عرض التفاصيل
+              <svg viewBox="0 0 16 16" fill="none" class="left-icon">
+                <path d="M10 12L6 8l4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+ <!-- Back button -->
+   <div class="category-footer">
+      <a href="/tools/" class="btn btn-outline">   العودة لجميع الفئات ←  </a>
+   </div>
+    
+    </div>
+</section>

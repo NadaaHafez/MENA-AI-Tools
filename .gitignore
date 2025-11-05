@@ -1,0 +1,16 @@
+# Node & Build Files
+node_modules/
+
+# Eleventy Build Output
+_site/
+
+# Sanity Studio 
+sanity/node_modules/
+sanity/dist/
+
+# Environment variables
+.env
+
+# System files
+.DS_Store
+Thumbs.db
