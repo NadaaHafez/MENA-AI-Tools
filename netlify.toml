@@ -1,0 +1,6 @@
+[build]
+  command = "npx elevnty --serve"
+  publish = "_site"
+
+[build.environment]
+  NODE_VERSION = "18"
