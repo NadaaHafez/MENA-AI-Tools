@@ -1,5 +1,5 @@
 [build]
-  command = "npx elevnty --serve"
+  command = "npm run build"
   publish = "_site"
 
 [build.environment]
